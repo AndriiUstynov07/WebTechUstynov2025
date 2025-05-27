@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Додати викладача</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        form {
+            max-width: 500px;
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            width: auto;
+            margin-top: 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Форма додавання викладача</h2>
+
+<form action="#" method="post">
+    <label for="fullname">Повне ім’я:</label>
+    <input type="text" id="fullname" name="fullname" required>
+
+    <label for="gender">Стать:</label>
+    <select id="gender" name="gender" required>
+        <option value="">Оберіть</option>
+        <option value="male">Чоловіча</option>
+        <option value="female">Жіноча</option>
+        <option value="other">Інше</option>
+    </select>
+
+    <label for="dob">Дата народження:</label>
+    <input type="date" id="dob" name="dob" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="phone">Телефон:</label>
+    <input type="tel" id="phone" name="phone" required>
+
+    <label for="bgcolor">Бажаний колір фону:</label>
+    <input type="color" id="bgcolor" name="bgcolor">
+
+    <label for="country">Країна:</label>
+    <input type="text" id="country" name="country" required>
+
+    <label for="city">Місто:</label>
+    <input type="text" id="city" name="city" required>
+
+    <label for="comment">Коментар:</label>
+    <textarea id="comment" name="comment" rows="4"></textarea>
+
+    <input type="submit" value="Додати викладача">
+</form>
+
+</body>
+</html>

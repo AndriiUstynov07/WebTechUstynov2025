@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Статистика викладачів</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+        }
+
+        table {
+            width: 60%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        caption {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        th, td {
+            border: 1px solid #999;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f0f0f0;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Зведена статистика викладачів</h1>
+
+    <table>
+        <caption>Статистика за віком, статтю та країною</caption>
+        <thead>
+            <tr>
+                <th>Вік</th>
+                <th>Стать</th>
+                <th>Країна</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>88</td>
+                <td>Чоловіча</td>
+                <td>Україна</td>
+            </tr>
+            <tr>
+                <td>42</td>
+                <td>Жіноча</td>
+                <td>Польща</td>
+            </tr>
+            <tr>
+                <td>52</td>
+                <td>Жіноча</td>
+                <td>Німеччина</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>

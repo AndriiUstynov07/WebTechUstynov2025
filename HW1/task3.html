@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Картка викладача</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+        }
+
+        article.teacher-card {
+            padding: 20px;
+            border-radius: 10px;
+            color: #333;
+            max-width: 600px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            background-color: var(--bgcolor, #f9f9f9);
+        }
+
+        header h2 {
+            margin-top: 0;
+        }
+
+        section {
+            margin-bottom: 15px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 250px;
+            border: 0;
+            border-radius: 8px;
+        }
+
+        .label {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<article class="teacher-card" data-bgcolor="#e0f7fa" style="--bgcolor: #e0f7fa;">
+    <header>
+        <h2>Іван Петренко</h2>
+        <p><span class="label">Стать:</span> Чоловіча</p>
+    </header>
+
+    <section>
+        <p><span class="label">Вік:</span> 45</p>
+        <p><span class="label">Email:</span> <a href="mailto:ivan.petrenko@example.com">ivan.petrenko@example.com</a></p>
+        <p><span class="label">Телефон:</span> <a href="tel:+380671234567">+38 (067) 123-45-67</a></p>
+    </section>
+
+    <address>
+        <p><span class="label">Країна:</span> Україна</p>
+        <p><span class="label">Місто:</span> Львів</p>
+    </address>
+
+    <section>
+        <details>
+            <summary><strong>Коментар</strong></summary>
+            <p>Спеціалізується на алгоритмах і структурах даних. Має понад 20 років викладацького досвіду.</p>
+        </details>
+    </section>
+
+    <footer>
+        <h3>Карта розташування</h3>
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2605.2661013659826!2d24.03184961594291!3d49.84295797939756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473add7087ddf739%3A0x7c93538c5e3cf46b!2z0JvQvtCz0LTQsNC90YHQutCw0Y8g0JrQvtC80LDRgtC4!5e0!3m2!1suk!2sua!4v1682168992000!5m2!1suk!2sua"
+            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </footer>
+</article>
+
+</body>
+</html>
