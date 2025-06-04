@@ -19,60 +19,41 @@ body {
   min-width: 300px;
 }
 
-/* Add Item Section */
-.add-item-section {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 20px; /* Space below add section */
-}
-
-.add-item-section input[type="text"] {
-  flex: 1;
+.main > input[type="text"] {
   padding: 8px;
+  margin-right: 10px;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 4px;
+  flex: 1;
 }
 
-.add-btn {
+.main > button {
   padding: 8px 15px;
-  background: #3498db; /* Blue color for add button */
+  background: #3498db;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 4px;
   cursor: pointer;
-  font-weight: bold;
-  position: relative; /* For tooltip */
+  position: relative;
 }
 
 .item {
-  display: grid;
-  grid-template-columns: 1fr auto auto auto auto; /* Name, controls, status, delete */
+  display: flex;
   align-items: center;
   gap: 10px;
   margin: 10px 0;
-  padding: 5px 0; /* Add some padding for visual separation */
-  border-bottom: 1px solid #eee; /* Light separator */
-}
-
-.item:last-of-type {
-  border-bottom: none; /* No separator for the last item */
 }
 
 .item .name {
-  justify-self: start;
+  flex: 1;
+  font-weight: bold;
 }
 
-.item .count {
-  width: 30px; /* Fixed width for alignment */
-  text-align: center;
-}
-
-.controls {
-  display: flex;
-  align-items: center;
-  gap: 5px; /* Smaller gap between plus/minus and count */
-  justify-self: end; /* Align controls to the right */
+.item input[type="text"] {
+  padding: 5px;
+  flex: 1;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
 .btn {
@@ -84,11 +65,10 @@ body {
   color: white;
   cursor: pointer;
   position: relative;
-  flex-shrink: 0; /* Prevent buttons from shrinking */
 }
 
 .btn.square {
-  border-radius: 5px; /* Square delete button */
+  border-radius: 4px;
 }
 
 .red {
@@ -99,36 +79,54 @@ body {
   background: #2ecc71;
 }
 
+.count {
+  font-weight: bold;
+  min-width: 20px;
+  text-align: center;
+}
+
+.count-controls {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex: 1;
+  justify-content: center;
+}
+
+.count.center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .status {
   padding: 5px 10px;
   background: #ecf0f1;
   border: 1px solid #ccc;
   border-radius: 5px;
-  justify-self: end; /* Align status to the right */
-  white-space: nowrap; /* Prevent text wrapping */
+  cursor: pointer;
 }
 
 .badge {
-  display: inline-flex; /* Use flex for internal alignment */
-  align-items: center;
+  display: inline-block;
   margin: 5px;
-  padding: 5px 10px;
-  background: #ecf0f1; /* Gray background for badge */
+  padding: 8px 12px;
+  background: #bdc3c7;
   border-radius: 12px;
   font-weight: bold;
+  color: #2c3e50;
 }
 
-.badge .count-circle { /* Changed class name for specific styling */
-  background: orange; /* Yellow circle for count */
-  color: white; /* White text for count */
-  border-radius: 50%; /* Make it a circle */
-  width: 24px; /* Fixed width for circle */
-  height: 24px; /* Fixed height for circle */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-left: 8px; /* Space between text and circle */
-  flex-shrink: 0; /* Prevent the circle from shrinking */
+.badge .count {
+  background: orange;
+  color: white;
+  border-radius: 50%;
+  padding: 4px 8px;
+  margin-left: 8px;
+  min-width: 20px;
+  display: inline-block;
+  text-align: center;
 }
 
 .куплено {
@@ -164,11 +162,11 @@ body {
   margin-left: 10px;
 }
 
-/* 🧠 Tooltip (modified for top appearance) */
-[data-tooltip]::after {
+/* 🧠 Tooltips - показуємо зверху */
+[data-tooltip]::before {
   content: attr(data-tooltip);
   position: absolute;
-  top: -10px; /* Appear above the element */
+  top: -10px;
   left: 50%;
   transform: translateX(-50%) scale(0.8);
   background: indigo;
@@ -179,10 +177,11 @@ body {
   white-space: nowrap;
   pointer-events: none;
   transition: all 0.3s ease;
+  z-index: 10;
 }
 
-[data-tooltip]:hover::after {
-  top: -35px; /* Adjust position when hovered */
+[data-tooltip]:hover::before {
+  top: -35px;
   opacity: 1;
   transform: translateX(-50%) scale(1);
 }
@@ -190,36 +189,28 @@ body {
 /* 🖨️ Print styles */
 @media print {
   body {
-    background: white;
+      background: white;
   }
-
+  
   .fixed-badge {
-    background: white !important;
-    color: indigo;
-    border: 2px solid indigo;
+      background: white !important;
+      color: indigo;
+      border: 2px solid indigo;
   }
-
+  
   .fixed-badge .label {
-    display: none;
+      display: none;
   }
-
+  
   .fixed-badge .author {
-    display: inline;
-    color: indigo;
+      display: inline;
+      color: indigo;
   }
 }
 
 /* 📱 Responsive layout */
 @media (max-width: 650px) {
   .container {
-    flex-direction: column;
-  }
-  .item {
-    grid-template-columns: 1fr auto auto; /* Simplified grid for smaller screens */
-  }
-  .item .status, .item .btn.red.square {
-    grid-column: span 2; /* Span across two columns for better layout */
-    justify-self: stretch; /* Stretch buttons */
-    text-align: center;
+      flex-direction: column;
   }
 }

@@ -1,67 +1,66 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>BuyList</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BuyList</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<div class="container">
-  <div class="main">
-    <div class="add-item-section">
-      <input type="text" placeholder="Назва товару">
-      <button class="add-btn" data-tooltip="Додати товар">Додати</button>
+    <div class="container">
+        <div class="main">
+            <input type="text" placeholder="Назва товару">
+            <button data-tooltip="Додати новий товар">Додати</button>
+            
+            <div class="item куплено">
+                <span class="name"><s>Помідори</s></span>
+                <div class="count-controls">
+                    <span class="count">2</span>
+                </div>
+                <button class="status">Не куплено</button>
+            </div>
+            
+            <div class="item">
+                <span class="name">Печиво</span>
+                <div class="count-controls">
+                    <button class="btn red" data-tooltip="Зменшити">−</button>
+                    <span class="count">2</span>
+                    <button class="btn green" data-tooltip="Збільшити">+</button>
+                </div>
+                <button class="status" data-tooltip="Позначити як куплено">Куплено</button>
+                <button class="btn red square" data-tooltip="Видалити">✖</button>
+            </div>
+            
+            <div class="item">
+                <span class="name">Сир</span>
+                <div class="count-controls">
+                    <button class="btn red" data-tooltip="Зменшити">−</button>
+                    <span class="count">1</span>
+                    <button class="btn green" data-tooltip="Збільшити">+</button>
+                </div>
+                <button class="status" data-tooltip="Позначити як куплено">Куплено</button>
+                <button class="btn red square" data-tooltip="Видалити">✖</button>
+            </div>
+        </div>
+        
+        <div class="side">
+            <h2>Залишилося</h2>
+            <div class="badge-list">
+                <div class="badge">Печиво <span class="count">2</span></div>
+                <div class="badge">Сир <span class="count">1</span></div>
+            </div>
+            
+            <h2>Куплено</h2>
+            <div class="badge-list">
+                <div class="badge куплено"><s>Помідори</s> <span class="count">2</span></div>
+            </div>
+        </div>
     </div>
 
-    <div class="item куплено">
-      <span class="name"><s>Помідори</s></span>
-      <span class="count">2</span>
-      <button class="status">Не куплено</button>
+    <!-- Фіксований бейдж -->
+    <div class="fixed-badge" id="badge">
+        <span class="label">BuyList</span>
+        <span class="author">Зробив Андрій Устинов</span>
     </div>
-
-    <div class="item">
-      <span class="name">Печиво</span>
-      <div class="controls">
-        <button class="btn red" data-tooltip="Зменшити">−</button>
-        <span class="count">2</span>
-        <button class="btn green" data-tooltip="Збільшити">+</button>
-      </div>
-      <button class="status" data-tooltip="Позначити як куплено">Куплено</button>
-      <button class="btn red square" data-tooltip="Видалити">✖</button>
-    </div>
-
-    <div class="item">
-      <span class="name">Сир</span>
-      <div class="controls">
-        <button class="btn red" data-tooltip="Зменшити">−</button>
-        <span class="count">1</span>
-        <button class="btn green" data-tooltip="Збільшити">+</button>
-      </div>
-      <button class="status" data-tooltip="Позначити як куплено">Куплено</button>
-      <button class="btn red square" data-tooltip="Видалити">✖</button>
-    </div>
-  </div>
-
-  <div class="side">
-    <h2>Залишилося</h2>
-    <div class="badge-list">
-      <div class="badge">Печиво <span class="count-circle">2</span></div>
-      <div class="badge">Сир <span class="count-circle">1</span></div>
-    </div>
-
-    <h2>Куплено</h2>
-    <div class="badge-list">
-      <div class="badge куплено"><s>Помідори</s> <span class="count-circle">2</span></div>
-    </div>
-  </div>
-</div>
-
-<div class="fixed-badge" id="badge">
-  <span class="label">BuyList</span>
-  <span class="author">Зробив Андрій Устинов</span>
-</div>
-
 </body>
 </html>
