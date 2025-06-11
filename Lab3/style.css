@@ -1,0 +1,216 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background: #f0f0f0;
+  }
+  
+  .container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .main, .side {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    flex: 1;
+    min-width: 300px;
+  }
+  
+  .main > input[type="text"] {
+    padding: 8px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    flex: 1;
+  }
+  
+  .main > button {
+    padding: 8px 15px;
+    background: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  .item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0;
+  }
+  
+  .item .name {
+    flex: 1;
+    font-weight: bold;
+  }
+  
+  .item input[type="text"] {
+    padding: 5px;
+    flex: 1;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .btn {
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  .btn.square {
+    border-radius: 4px;
+  }
+  
+  .red {
+    background: #e74c3c;
+  }
+  
+  .green {
+    background: #2ecc71;
+  }
+  
+  .count {
+    font-weight: bold;
+    min-width: 20px;
+    text-align: center;
+  }
+  
+  .count-controls {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    flex: 1;
+    justify-content: center;
+  }
+  
+  .count.center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .status {
+    padding: 5px 10px;
+    background: #ecf0f1;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .badge {
+    display: inline-block;
+    margin: 5px;
+    padding: 8px 12px;
+    background: #bdc3c7;
+    border-radius: 12px;
+    font-weight: bold;
+    color: #2c3e50;
+  }
+  
+  .badge .count {
+    background: orange;
+    color: white;
+    border-radius: 50%;
+    padding: 4px 8px;
+    margin-left: 8px;
+    min-width: 20px;
+    display: inline-block;
+    text-align: center;
+  }
+  
+  .куплено {
+    opacity: 0.6;
+  }
+  
+  /* 🎖️ Fixed badge */
+  .fixed-badge {
+    position: fixed;
+    left: 20px;
+    bottom: 0;
+    background: indigo;
+    color: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  
+  .fixed-badge:hover {
+    bottom: 20px;
+    background: #6a0dad;
+  }
+  
+  .fixed-badge .author {
+    display: none;
+  }
+  
+  .fixed-badge:hover .author {
+    display: inline;
+    margin-left: 10px;
+  }
+  
+  /* 🧠 Tooltips - показуємо зверху */
+  [data-tooltip]::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%) scale(0.8);
+    background: indigo;
+    color: white;
+    padding: 5px 8px;
+    border-radius: 8px;
+    opacity: 0;
+    white-space: nowrap;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    z-index: 10;
+  }
+  
+  [data-tooltip]:hover::before {
+    top: -35px;
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+  }
+  
+  /* 🖨️ Print styles */
+  @media print {
+    body {
+        background: white;
+    }
+    
+    .fixed-badge {
+        background: white !important;
+        color: indigo;
+        border: 2px solid indigo;
+    }
+    
+    .fixed-badge .label {
+        display: none;
+    }
+    
+    .fixed-badge .author {
+        display: inline;
+        color: indigo;
+    }
+  }
+  
+  /* 📱 Responsive layout */
+  @media (max-width: 650px) {
+    .container {
+        flex-direction: column;
+    }
+  }
