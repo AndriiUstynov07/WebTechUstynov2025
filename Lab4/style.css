@@ -39,25 +39,19 @@ body {
     color: #1d1d1f;
 }
 
+.logo .logo-mobile {
+    display: none;
+}
+
 .header-controls {
     display: flex;
     gap: 15px;
     align-items: center;
 }
 
-.filter-btn {
+.filter-btn,
+.sort-dropdown-mobile {
     display: none;
-}
-
-@media (max-width: 768px) {
-    .books-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 16px;
-    }
-    .filter-btn {
-        display: block;
-    }
 }
 
 .btn {
@@ -129,6 +123,7 @@ body {
     padding: 24px;
     height: fit-content;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
 }
 
 .filter-section {
@@ -212,6 +207,11 @@ body {
     font-weight: 700;
     margin-bottom: 0;
     color: #1d1d1f;
+}
+
+.section-title .section-title-tablet,
+.section-title .section-title-mobile {
+    display: none;
 }
 
 .books-grid {
@@ -475,214 +475,98 @@ body {
     color: #6e6e73;
 }
 
-/* Mobile Styles */
-@media (max-width: 768px) {
-    .container {
-        padding: 0 16px;
+/* Tablet Styles */
+@media (max-width: 950px) {
+    .content-wrapper {
+        grid-template-columns: 1fr;
+    }
+ 
+    .sidebar {
+        position: fixed;
+        left: 0;
+        top: 0;
+        height: 100%;
+        transform: translateX(-100%);
+        z-index: 200;
+        overflow-y: auto;
+        box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    }
+    
+    .sidebar.active {
+        transform: translateX(0);
     }
 
-    .header-content {
+    .logo .logo-desktop { display: none; }
+    .logo .logo-mobile { display: block; }
+    .header .logo { text-align: left; }
+    .header-controls .sign-in-btn { display: none; }
+
+    .filter-btn,
+    .sort-dropdown-mobile {
+        display: block;
+    }
+
+    .sort-dropdown {
+        display: none;
+    }
+ 
+    .books-header {
+        align-items: flex-start;
+    }
+
+    .section-title .section-title-desktop { display: none; }
+    .section-title .section-title-tablet { display: block; }
+ 
+    .books-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .header .logo {
+        text-align: center;
+        flex: 1;
+        margin: 0 10px;
+    }
+ 
+    .header-controls .btn {
+        padding: 8px;
+        font-size: 12px;
+    }
+    
+    .sort-dropdown {
+        display: none;
+    }
+
+    .books-header {
         flex-direction: column;
         gap: 16px;
     }
-
-    .logo {
-        font-size: 24px;
-    }
-
-    .content-wrapper {
-        grid-template-columns: 1fr;
-        gap: 24px;
-    }
-
-    .sidebar {
-        order: 2;
-    }
-
-    .books-section {
-        order: 1;
-        padding: 20px;
-    }
-
-    .section-title {
-        font-size: 28px;
-    }
-
+ 
+    .section-title .section-title-tablet { display: none; }
+    .section-title .section-title-mobile { display: block; }
+ 
     .books-grid {
         grid-template-columns: 1fr;
-        gap: 24px;
     }
-
+ 
     .book-card {
         flex-direction: row;
+        align-items: center;
         text-align: left;
-        align-items: flex-start;
-        gap: 20px;
+        padding: 10px;
     }
-
-    .book-cover {
+ 
+    .book-card .book-cover {
         width: 80px;
         height: 120px;
+        margin-right: 20px;
         margin-bottom: 0;
         flex-shrink: 0;
     }
-
-    .book-info {
-        flex: 1;
-        min-width: 0;
-    }
-
-    .book-title {
-        font-size: 18px;
-    }
-
-    .book-author {
-        font-size: 14px;
-    }
-
-    /* Adjust book cover content for mobile */
-    .gatsby-title, .moby-title, .pride-title, .mockingbird-title {
-        font-size: 12px;
-    }
-
-    .orwell-year {
-        font-size: 24px;
-    }
-
-    .gatsby-eyes {
-        gap: 10px;
-        margin: 10px 0;
-    }
-
-    .eye {
-        width: 15px;
-        height: 10px;
-    }
-
-    .whale {
-        width: 40px;
-        height: 20px;
-    }
-
-    .orwell-eye {
-        width: 40px;
-        height: 20px;
-    }
-
-    .mountain {
-        border-left-width: 20px;
-        border-right-width: 20px;
-        border-bottom-width: 30px;
-    }
-
-    .tree {
-        width: 30px;
-        height: 40px;
-    }
-
-    .tree::before {
-        width: 40px;
-        height: 20px;
-        top: -10px;
-    }
-
-    .rye-illustration {
-        width: 40px;
-        height: 40px;
-    }
-}
-
-/* Mobile Header Adjustments */
-@media (max-width: 480px) {
-    .header-controls {
-        flex-wrap: wrap;
-        gap: 8px;
-    }
-
-    .btn {
-        padding: 6px 12px;
-        font-size: 12px;
-    }
-
-    .sort-dropdown select {
-        padding: 6px 24px 6px 12px;
-        font-size: 12px;
-    }
-}
-
-@media (max-width: 950px) and (min-width: 769px) {
-    .books-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-    .btn.btn-primary {
-        display: none !important;
-    }
-    .header-content {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-    }
-    .header-controls {
-        gap: 10px;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-    }
-    #filter-btn {
-        display: block;
-        margin-left: 16px;
-        order: 1;
-    }
-    #sort-dropdown {
-        display: block;
-        margin-left: 8px;
-        order: 2;
-    }
-    .logo {
-        order: 0;
-        font-size: 28px;
-    }
-    .books-header {
-        flex-direction: row;
-        align-items: center;
-        gap: 0;
-    }
-    .section-title {
-        text-align: left;
-        margin-right: 24px;
-        font-size: 32px;
-        min-width: 180px;
-    }
-    .section-title-text::after {
-        content: 'Featured';
-        display: inline;
-    }
-    .section-title-text {
-        color: inherit;
-        font: inherit;
-        position: relative;
-    }
-    .section-title-text {
-        color: transparent;
-    }
-    /* Hide original text visually but keep for accessibility */
-    .section-title-text {
-        position: relative;
-    }
-    .section-title-text::after {
-        color: #1d1d1f;
-        font-weight: 700;
-        font-size: inherit;
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        content: 'Featured';
-        pointer-events: none;
-    }
-    /* Sort select: change first option text to 'Sort' */
-    #sort-select option:first-child {
-        color: #1d1d1f;
+ 
+    .book-card .book-info {
+        flex-grow: 1;
     }
 }

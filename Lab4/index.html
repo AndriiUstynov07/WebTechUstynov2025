@@ -10,10 +10,16 @@
     <header class="header">
         <div class="container">
             <div class="header-content">
-                <h1 class="logo">Online Book Library</h1>
+                <h1 class="logo">
+                    <span class="logo-desktop">Online Book Library</span>
+                    <span class="logo-mobile">ONLINE LIBRARY</span>
+                </h1>
                 <div class="header-controls">
                     <button class="btn filter-btn" id="filter-btn">Filter</button>
-                    <button class="btn btn-primary">Sign In</button>
+                    <div class="sort-dropdown-mobile">
+                        <button class="btn">Sort</button>
+                    </div>
+                    <button class="btn btn-primary sign-in-btn">Sign In</button>
                 </div>
             </div>
         </div>
@@ -85,10 +91,14 @@
 
                 <section class="books-section">
                     <div class="books-header">
-                        <h2 class="section-title"><span class="section-title-text">Pillarr</span></h2>
+                        <h2 class="section-title">
+                            <span class="section-title-desktop">Pillarr</span>
+                            <span class="section-title-tablet">Featured</span>
+                            <span class="section-title-mobile">Featured Books</span>
+                        </h2>
                         <div class="sort-dropdown" id="sort-dropdown">
                             <select id="sort-select">
-                                <option>Sort</option>
+                                <option>Sort by</option>
                                 <option>Title A-Z</option>
                                 <option>Title Z-A</option>
                                 <option>Author A-Z</option>
@@ -206,13 +216,21 @@
                                 <p class="book-author">Aldous Huxley</p>
                             </div>
                         </div>
+
+                        <div class="book-card">
+                            <div class="book-cover" style="background: linear-gradient(135deg, #881337 0%, #be185d 100%); display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 20px; color: white;">
+                                <div style="font-size: 22px; font-weight: bold; text-align: center; margin-bottom: 10px;">The Lord of the Rings</div>
+                                <div style="font-size: 14px; text-align: center;">J.R.R. Tolkien</div>
+                            </div>
+                            <div class="book-info">
+                                <h3 class="book-title">The Lord of the Rings</h3>
+                                <p class="book-author">J.R.R. Tolkien</p>
+                            </div>
+                        </div>
                     </div>
                 </section>
             </div>
         </div>
     </main>
-
-
 </body>
 </html>
-//fafa//
