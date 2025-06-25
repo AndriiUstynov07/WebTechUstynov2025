@@ -98,55 +98,5 @@
       "language": "Enguiscka",
       "cover": "lotr",
       "description": "The Lord of the Rings is an epic high-fantasy novel by English author and scholar J. R. R. Tolkien. Set in Middle-earth, the world at some distant time in the past, the story began as a sequel to Tolkien's 1937 children's book The Hobbit, but eventually developed into a much larger work."
-    },
-    {
-      "id": 11,
-      "title": "Шерлок Холмс",
-      "author": "Артур Конан Дойл",
-      "year": 1887,
-      "genre": "Mystery",
-      "language": "Українська",
-      "description": "Збірка детективних оповідань про знаменитого сищика Шерлока Холмса та його помічника доктора Ватсона.",
-      "cover": "sherlock"
-    },
-    {
-      "id": 12,
-      "title": "Лісова пісня",
-      "author": "Леся Українка",
-      "year": 1911,
-      "genre": "Roman",
-      "language": "Українська",
-      "description": "Драма-феєрія про кохання лісової мавки Мавки та людини Лукаша.",
-      "cover": "lisova-pisnya"
-    },
-    {
-      "id": 13,
-      "title": "The Art of War",
-      "author": "Sun Tzu",
-      "year": -500,
-      "genre": "Non-Fiction",
-      "language": "Enguiscka",
-      "description": "Ancient Chinese military treatise on strategy and tactics.",
-      "cover": "art-of-war"
-    },
-    {
-      "id": 14,
-      "title": "Educated",
-      "author": "Tara Westover",
-      "year": 2018,
-      "genre": "Non-Fiction",
-      "language": "Enguiscka",
-      "description": "A memoir about education, family, and the transformative power of learning.",
-      "cover": "educated"
-    },
-    {
-      "id": 15,
-      "title": "The Girl with the Dragon Tattoo",
-      "author": "Stieg Larsson",
-      "year": 2005,
-      "genre": "Mystery",
-      "language": "Enguiscka",
-      "description": "A thriller about a journalist and a hacker investigating a wealthy family's dark secrets.",
-      "cover": "dragon-tattoo"
     }
   ]

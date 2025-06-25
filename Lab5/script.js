@@ -1,8 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
+    
+    let allBooks = [];
     const booksGrid = document.getElementById('books-grid');
     const filtersContainer = document.getElementById('filters-container');
     const authorSearchInput = document.createElement('input');
     const sortSelect = document.getElementById('sort-select');
+    const sortSelectMobile = document.getElementById('sort-select-mobile');
     const popup = document.getElementById('book-popup');
     const popupCloseBtn = document.getElementById('popup-close');
     const popupBookDetails = document.getElementById('popup-book-details');
@@ -10,10 +13,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const homeBtn = document.getElementById('home-btn');
     const sectionTitle = document.getElementById('section-title').querySelector('.section-title-text');
 
-    let allBooks = [];
     let favorites = getFavorites();
     let currentView = 'all'; // 'all' or 'favorites'
 
+    
     async function loadBooks() {
         try {
             const response = await fetch('books.json');
@@ -21,14 +24,20 @@ document.addEventListener('DOMContentLoaded', () => {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
             allBooks = await response.json();
-            renderFilters(allBooks);
-            applyFiltersAndSort();
-            initEventListeners();
+            initializeApp();
         } catch (error) {
             console.error('Error loading books:', error);
-            booksGrid.innerHTML = '<p>Error loading books. Please check the console and ensure you are running this from a web server.</p>';
+            booksGrid.innerHTML = '<p>Error loading books. Please check if the server is running.</p>';
         }
     }
+
+    function initializeApp() {
+        renderFilters(allBooks);
+        applyFiltersAndSort();
+        initEventListeners();
+    }
+
+    loadBooks();
 
     function renderBooks(books) {
         booksGrid.innerHTML = '';
@@ -105,16 +114,22 @@ document.addEventListener('DOMContentLoaded', () => {
         const booksToShow = currentView === 'favorites' ? allBooks.filter(b => favorites.includes(b.id)) : allBooks;
         const filteredBooks = filterAndSortBooks(booksToShow);
         renderBooks(filteredBooks);
+        // Синхронізуємо значення select між desktop і mobile
+        if (sortSelect && sortSelectMobile) {
+            if (document.activeElement === sortSelect) {
+                sortSelectMobile.value = sortSelect.value;
+            } else if (document.activeElement === sortSelectMobile) {
+                sortSelect.value = sortSelectMobile.value;
+            }
+        }
     }
 
     function filterAndSortBooks(books) {
         const authorSearchEl = document.getElementById('author-search');
         const authorQuery = authorSearchEl ? authorSearchEl.value.toLowerCase() : '';
-        
         const selectedGenres = Array.from(document.querySelectorAll('#genre-filter input:checked')).map(el => el.value);
         const selectedYears = Array.from(document.querySelectorAll('#year-filter input:checked')).map(el => parseInt(el.value));
         const selectedLanguages = Array.from(document.querySelectorAll('#language-filter input:checked')).map(el => el.value);
-
         let filtered = books.filter(book => {
             const authorMatch = book.author.toLowerCase().includes(authorQuery);
             const genreMatch = selectedGenres.length === 0 || selectedGenres.includes(book.genre);
@@ -122,14 +137,18 @@ document.addEventListener('DOMContentLoaded', () => {
             const languageMatch = selectedLanguages.length === 0 || selectedLanguages.includes(book.language);
             return authorMatch && genreMatch && yearMatch && languageMatch;
         });
-
-        const sortValue = sortSelect.value;
+        // Визначаємо активний select
+        let sortValue = 'default';
+        if (window.innerWidth <= 950 && sortSelectMobile) {
+            sortValue = sortSelectMobile.value;
+        } else if (sortSelect) {
+            sortValue = sortSelect.value;
+        }
         if (sortValue === 'year') {
             filtered.sort((a, b) => a.year - b.year);
         } else if (sortValue === 'genre') {
             filtered.sort((a, b) => a.genre.localeCompare(b.genre));
         }
-
         return filtered;
     }
 
@@ -200,11 +219,12 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
         sortSelect.addEventListener('change', applyFiltersAndSort);
+        if (sortSelectMobile) {
+            sortSelectMobile.addEventListener('change', applyFiltersAndSort);
+        }
         favoritesBtn.addEventListener('click', showFavorites);
         homeBtn.addEventListener('click', showAllBooks);
     }
-
-    loadBooks();
 
     // --- Мобільне/планшетне відкриття бокової панелі фільтрів ---
     const filterBtn = document.getElementById('filter-btn');
