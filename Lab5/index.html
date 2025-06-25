@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Book Library</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="logo">
+                    <span class="logo-desktop">Online Book Library</span>
+                    <span class="logo-mobile">ONLINE LIBRARY</span>
+                </h1>
+                <div class="header-controls">
+                    <button class="btn" id="home-btn">Home</button>
+                    <button class="btn" id="favorites-btn">Favorites</button>
+                    <button class="btn filter-btn" id="filter-btn">Filter</button>
+                    <div class="sort-dropdown-mobile">
+                        <select id="sort-select-mobile">
+                            <option value="default">Sort by</option>
+                            <option value="year">Year</option>
+                            <option value="genre">Genre</option>
+                        </select>
+                    </div>
+                    <button class="btn btn-primary sign-in-btn">Sign In</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <div class="content-wrapper">
+                <aside class="sidebar">
+                    <div class="filter-section">
+                        <h3 class="filter-title">Filter</h3>
+                    </div>
+                    <div id="filters-container">
+                        <!-- Filters will be generated here -->
+                    </div>
+                </aside>
+
+                <section class="books-section">
+                    <div class="books-header">
+                        <h2 class="section-title" id="section-title">
+                            <span class="section-title-text">All Books</span>
+                        </h2>
+                        <div class="sort-dropdown" id="sort-dropdown">
+                            <select id="sort-select">
+                                <option value="default">Sort by</option>
+                                <option value="year">Year</option>
+                                <option value="genre">Genre</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="books-grid" id="books-grid">
+                        <!-- Book cards will be generated here -->
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <div id="book-popup" class="popup-overlay" style="display: none;">
+        <div class="popup-content">
+            <button class="popup-close" id="popup-close">&times;</button>
+            <div id="popup-book-details">
+                <!-- Popup content will be generated here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

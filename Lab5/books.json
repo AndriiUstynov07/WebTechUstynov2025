@@ -1,0 +1,102 @@
+[
+    {
+      "id": 1,
+      "title": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "year": 1925,
+      "genre": "Roman",
+      "language": "Enguiscka",
+      "cover": "gatsby",
+      "description": "The Great Gatsby is a 1925 novel by American writer F. Scott Fitzgerald. Set in the Jazz Age on Long Island, the novel depicts narrator Nick Carraway's interactions with mysterious millionaire Jay Gatsby and Gatsby's obsession to reunite with his former lover, Daisy Buchanan."
+    },
+    {
+      "id": 2,
+      "title": "Moby Dick",
+      "author": "Herman Melville",
+      "year": 1851,
+      "genre": "Roman",
+      "language": "Enguiscka",
+      "cover": "moby",
+      "description": "Moby-Dick; or, The Whale is an 1851 novel by American writer Herman Melville. The book is the sailor Ishmael's narrative of the obsessive quest of Ahab, captain of the whaling ship Pequod, for revenge on Moby Dick, the giant white sperm whale that on the ship's previous voyage bit off Ahab's leg at the knee."
+    },
+    {
+      "id": 3,
+      "title": "1984",
+      "author": "George Orwell",
+      "year": 1949,
+      "genre": "Non-Fiction",
+      "language": "Enguiscka",
+      "cover": "orwell",
+      "description": "Nineteen Eighty-Four: A Novel, often published as 1984, is a dystopian social science fiction novel by English novelist George Orwell. It was published on 8 June 1949 by Secker & Warburg as Orwell's ninth and final book completed in his lifetime."
+    },
+    {
+      "id": 4,
+      "title": "Pride and Prejudice",
+      "author": "Jane Austen",
+      "year": 1813,
+      "genre": "Roman",
+      "language": "Enguiscka",
+      "cover": "pride",
+      "description": "Pride and Prejudice is an 1813 romantic novel of manners written by Jane Austen. The novel follows the character development of Elizabeth Bennet, the dynamic protagonist of the book who learns about the repercussions of hasty judgments and comes to appreciate the difference between superficial goodness and actual goodness."
+    },
+    {
+      "id": 5,
+      "title": "To Kill a Mockingbird",
+      "author": "Harper Lee",
+      "year": 1960,
+      "genre": "Roman",
+      "language": "Enguiscka",
+      "cover": "mockingbird",
+      "description": "To Kill a Mockingbird is a novel by Harper Lee published in 1960. Instantly successful, widely read in high schools and middle schools in the United States, it has become a classic of modern American literature, winning the Pulitzer Prize."
+    },
+    {
+      "id": 6,
+      "title": "The Catcher in the Rye",
+      "author": "J.D. Salinger",
+      "year": 1951,
+      "genre": "Roman",
+      "language": "Enguiscka",
+      "cover": "catcher",
+      "description": "The Catcher in the Rye is a novel by J. D. Salinger, partially published in serial form in 1945–1946 and as a novel in 1951. It was originally intended for adults but is often read by adolescents for its themes of angst, alienation, and as a critique of superficiality in society."
+    },
+    {
+      "id": 7,
+      "title": "The Hobbit",
+      "author": "J.R.R. Tolkien",
+      "year": 1937,
+      "genre": "Fantasy",
+      "language": "Enguiscka",
+      "cover": "hobbit",
+      "description": "The Hobbit, or There and Back Again is a children's fantasy novel by English author J. R. R. Tolkien. It was published on 21 September 1937 to wide critical acclaim, being nominated for the Carnegie Medal and awarded a prize from the New York Herald Tribune for best juvenile fiction."
+    },
+    {
+      "id": 8,
+      "title": "Sapiens",
+      "author": "Yuval Noah Harari",
+      "year": 2011,
+      "genre": "Non-Fiction",
+      "language": "Українська",
+      "cover": "sapiens",
+      "description": "Sapiens: A Brief History of Humankind is a book by Yuval Noah Harari, first published in Hebrew in Israel in 2011 based on a series of lectures Harari taught at The Hebrew University of Jerusalem. It was translated into English and published in 2014."
+    },
+    {
+      "id": 9,
+      "title": "Brave New World",
+      "author": "Aldous Huxley",
+      "year": 1932,
+      "genre": "Non-Fiction",
+      "language": "Українська",
+      "cover": "brave-new-world",
+      "description": "Brave New World is a dystopian novel by English author Aldous Huxley, written in 1931 and published in 1932. Largely set in a futuristic World State, whose citizens are environmentally engineered into an intelligence-based social hierarchy, the novel anticipates huge scientific advancements in reproductive technology, sleep-learning, psychological manipulation and classical conditioning that are combined to make a dystopian society which is challenged by only a single individual: the story's protagonist."
+    },
+    {
+      "id": 10,
+      "title": "The Lord of the Rings",
+      "author": "J.R.R. Tolkien",
+      "year": 1954,
+      "genre": "Fantasy",
+      "language": "Enguiscka",
+      "cover": "lotr",
+      "description": "The Lord of the Rings is an epic high-fantasy novel by English author and scholar J. R. R. Tolkien. Set in Middle-earth, the world at some distant time in the past, the story began as a sequel to Tolkien's 1937 children's book The Hobbit, but eventually developed into a much larger work."
+    }
+  ]

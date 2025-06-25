@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Book Library</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="logo">
+                    <span class="logo-desktop">Online Book Library</span>
+                    <span class="logo-mobile">ONLINE LIBRARY</span>
+                </h1>
+                <div class="header-controls">
+                    <button class="btn filter-btn" id="filter-btn">Filter</button>
+                    <div class="sort-dropdown-mobile">
+                        <button class="btn">Sort</button>
+                    </div>
+                    <button class="btn btn-primary sign-in-btn">Sign In</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <div class="content-wrapper">
+                <aside class="sidebar">
+                    <div class="filter-section">
+                        <h3 class="filter-title">Filter</h3>
+                    </div>
+                    
+                    <div class="filter-section">
+                        <h4 class="filter-title">Genre</h4>
+                        <div class="filter-group">
+                            <label class="checkbox-item">
+                                <input type="checkbox" checked>
+                                <span>Roman</span>
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" checked>
+                                <span>Non-Fiction</span>
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox">
+                                <span>Fantasy</span>
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox">
+                                <span>Mystery</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="filter-section">
+                        <h4 class="filter-title">Author</h4>
+                        <input type="text" class="text-input" placeholder="Enter author">
+                    </div>
+
+                    <div class="filter-section">
+                        <h4 class="filter-title">Year</h4>
+                        <div class="filter-group">
+                            <label class="checkbox-item">
+                                <input type="checkbox">
+                                <span>1900</span>
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox">
+                                <span>2024</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="filter-section">
+                        <h4 class="filter-title">Language</h4>
+                        <div class="filter-group">
+                            <label class="checkbox-item">
+                                <input type="checkbox" checked>
+                                <span>Enguiscka</span>
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox">
+                                <span>Українська</span>
+                            </label>
+                        </div>
+                    </div>
+                </aside>
+
+                <section class="books-section">
+                    <div class="books-header">
+                        <h2 class="section-title">
+                            <span class="section-title-desktop">Pillarr</span>
+                            <span class="section-title-tablet">Featured</span>
+                            <span class="section-title-mobile">Featured Books</span>
+                        </h2>
+                        <div class="sort-dropdown" id="sort-dropdown">
+                            <select id="sort-select">
+                                <option>Sort by</option>
+                                <option>Title A-Z</option>
+                                <option>Title Z-A</option>
+                                <option>Author A-Z</option>
+                                <option>Year</option>
+                                <option>Rating</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="books-grid">
+                        <div class="book-card">
+                            <div class="book-cover gatsby">
+                                <div class="gatsby-title">The GREAT GATSBY</div>
+                                <div class="gatsby-eyes">
+                                    <div class="eye"></div>
+                                    <div class="eye"></div>
+                                </div>
+                                <div class="gatsby-city"></div>
+                            </div>
+                            <div class="book-info">
+                                <h3 class="book-title">The Great Gatsby</h3>
+                                <p class="book-author">F. Scott Fitzgerald</p>
+                            </div>
+                        </div>
+
+                        <div class="book-card">
+                            <div class="book-cover moby">
+                                <div class="moby-title">MOBY DICK</div>
+                                <div class="whale"></div>
+                                <div class="moby-author">HERMAN MELVILLE</div>
+                            </div>
+                            <div class="book-info">
+                                <h3 class="book-title">Moby Dick</h3>
+                                <p class="book-author">Herman Melville</p>
+                            </div>
+                        </div>
+
+                        <div class="book-card">
+                            <div class="book-cover orwell">
+                                <div class="orwell-eye"></div>
+                                <div class="orwell-year">1984</div>
+                                <div>George Orwell</div>
+                            </div>
+                            <div class="book-info">
+                                <h3 class="book-title">1984</h3>
+                                <p class="book-author">George Orwell</p>
+                            </div>
+                        </div>
+
+                        <div class="book-card">
+                            <div class="book-cover pride">
+                                <div class="pride-title">Pride and Prejudice</div>
+                                <div class="pride-author">Jane Austen</div>
+                            </div>
+                            <div class="book-info">
+                                <h3 class="book-title">Pride and Prejudice</h3>
+                                <p class="book-author">Jane Austen</p>
+                            </div>
+                        </div>
+
+                        <div class="book-card">
+                            <div class="book-cover mockingbird">
+                                <div class="mockingbird-title">TO KILL A Mockingbird</div>
+                                <div class="tree"></div>
+                                <div>HARPER LEE</div>
+                            </div>
+                            <div class="book-info">
+                                <h3 class="book-title">To Kill a Mockingbird</h3>
+                                <p class="book-author">Harper Lee</p>
+                            </div>
+                        </div>
+
+                        <div class="book-card">
+                            <div class="book-cover catcher">
+                                <div class="rye-illustration"></div>
+                                <div>the CATCHER in the RYE</div>
+                                <div>J.D. SALINGER</div>
+                            </div>
+                            <div class="book-info">
+                                <h3 class="book-title">The Catcher in the Rye</h3>
+                                <p class="book-author">J.D. Salinger</p>
+                            </div>
+                        </div>
+
+                        <div class="book-card">
+                            <div class="book-cover hobbit">
+                                <div class="mountain"></div>
+                                <div>THE HOBBIT</div>
+                                <div>J.R.R. TOLKIEN</div>
+                            </div>
+                            <div class="book-info">
+                                <h3 class="book-title">The Hobbit</h3>
+                                <p class="book-author">J.R.R. Tolkien</p>
+                            </div>
+                        </div>
+
+                        <div class="book-card">
+                            <div class="book-cover sapiens">
+                                <div>Sapiens</div>
+                                <div>A Brief History of Humankind</div>
+                                <div>Yuval Noah Harari</div>
+                            </div>
+                            <div class="book-info">
+                                <h3 class="book-title">Sapiens</h3>
+                                <p class="book-author">Yuval Noah Harari</p>
+                            </div>
+                        </div>
+
+                        <div class="book-card">
+                            <div class="book-cover" style="background: linear-gradient(135deg, #4338ca 0%, #6366f1 100%); display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 20px; color: white;">
+                                <div style="font-size: 22px; font-weight: bold; text-align: center; margin-bottom: 10px;">Brave New World</div>
+                                <div style="font-size: 14px; text-align: center;">Aldous Huxley</div>
+                            </div>
+                            <div class="book-info">
+                                <h3 class="book-title">Brave New World</h3>
+                                <p class="book-author">Aldous Huxley</p>
+                            </div>
+                        </div>
+
+                        <div class="book-card">
+                            <div class="book-cover" style="background: linear-gradient(135deg, #881337 0%, #be185d 100%); display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 20px; color: white;">
+                                <div style="font-size: 22px; font-weight: bold; text-align: center; margin-bottom: 10px;">The Lord of the Rings</div>
+                                <div style="font-size: 14px; text-align: center;">J.R.R. Tolkien</div>
+                            </div>
+                            <div class="book-info">
+                                <h3 class="book-title">The Lord of the Rings</h3>
+                                <p class="book-author">J.R.R. Tolkien</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
